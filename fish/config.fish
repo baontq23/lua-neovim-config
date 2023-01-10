@@ -15,6 +15,8 @@ alias la "ls -A"
 alias ll "ls -l"
 alias lla "ll -A"
 alias g git
+alias gc "git cz --disable-emoji"
+alias gpo "git push origin"
 command -qv nvim && alias vim nvim
 
 set -gx EDITOR nvim
@@ -22,6 +24,12 @@ set -gx EDITOR nvim
 set -gx PATH bin $PATH
 set -gx PATH ~/bin $PATH
 set -gx PATH ~/.local/bin $PATH
+#set -gx PATH $HOME/.rbenv/bin:$PATH
+set -gx ANDROID_SDK_ROOT $HOME/Library/Android/sdk
+set -gx PATH $PATH:$ANDROID_SDK_ROOT/emulator
+set -gx PATH $PATH:$ANDROID_SDK_ROOT/platform-tools
+# Ruby
+status --is-interactive; and rbenv init - fish | source
 
 # NodeJS
 set -gx PATH node_modules/.bin $PATH
